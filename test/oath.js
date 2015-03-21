@@ -30,6 +30,7 @@ describe('oath', function () {
   describe('Promise', function () {
     describe('.then', function () {
       it('should call then on a promise resolution', function (done) {
+
         promiseTimeout(function () {}, 5)
           .then(done);
       });
