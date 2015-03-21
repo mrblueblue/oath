@@ -5,13 +5,25 @@ var expect = chai.expect;
 var _      = require('underscore');
 
 oath.promisify = oath.promisify || function () {};
+// promisify method is promisify or anon function
 
 var promiseTimeout = function (func, time) {
+// takes too arguments func and time
+
   var defer = oath.defer();
+  // defer is output of defer method
+
   setTimeout(function () {
-    defer.resolve(func());
-  }, time);
+    defer.resolve(func()); // func
+    // function = defer.resolve; resolve takes as arg,
+      // an invocation of func
+      
+  }, time); // time
+  // run resolve on defer after set time
+    // what does resolve do?
+
   return defer.promise;
+  //return object from promise method/property
 };
 
 describe('oath', function () {
